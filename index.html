@@ -7,35 +7,74 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="calculator">
-    <div class="display">
-      <div class="expression" id="expression"></div>
-      <div class="result" id="result">0</div>
+  <div class="app">
+    <!-- History Panel -->
+    <div class="history-panel" id="historyPanel">
+      <div class="history-header">
+        <span>History</span>
+        <button class="btn-clear-history" onclick="clearHistory()">Clear</button>
+      </div>
+      <ul class="history-list" id="historyList">
+        <li class="history-empty">No calculations yet</li>
+      </ul>
     </div>
-    <div class="buttons">
-      <button class="btn btn-wide btn-secondary" onclick="clearAll()">AC</button>
-      <button class="btn btn-secondary" onclick="toggleSign()">+/-</button>
-      <button class="btn btn-secondary" onclick="percent()">%</button>
-      <button class="btn btn-operator" onclick="appendOp('/')">÷</button>
 
-      <button class="btn" onclick="appendNum('7')">7</button>
-      <button class="btn" onclick="appendNum('8')">8</button>
-      <button class="btn" onclick="appendNum('9')">9</button>
-      <button class="btn btn-operator" onclick="appendOp('*')">×</button>
+    <!-- Calculator -->
+    <div class="calculator">
+      <div class="display">
+        <div class="display-top">
+          <button class="btn-hist-toggle" onclick="toggleHistory()" title="History">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+            </svg>
+          </button>
+          <div class="memory-indicator" id="memIndicator"></div>
+        </div>
+        <div class="expression" id="expression"></div>
+        <div class="result" id="result">0</div>
+      </div>
 
-      <button class="btn" onclick="appendNum('4')">4</button>
-      <button class="btn" onclick="appendNum('5')">5</button>
-      <button class="btn" onclick="appendNum('6')">6</button>
-      <button class="btn btn-operator" onclick="appendOp('-')">−</button>
+      <!-- Memory row -->
+      <div class="mem-row">
+        <button class="mem-btn" onclick="memClear()">MC</button>
+        <button class="mem-btn" onclick="memRecall()">MR</button>
+        <button class="mem-btn" onclick="memAdd()">M+</button>
+        <button class="mem-btn" onclick="memSub()">M−</button>
+      </div>
 
-      <button class="btn" onclick="appendNum('1')">1</button>
-      <button class="btn" onclick="appendNum('2')">2</button>
-      <button class="btn" onclick="appendNum('3')">3</button>
-      <button class="btn btn-operator" onclick="appendOp('+')">+</button>
+      <div class="buttons">
+        <button class="btn btn-wide btn-secondary" onclick="clearAll()">AC</button>
+        <button class="btn btn-secondary" onclick="toggleSign()">+/−</button>
+        <button class="btn btn-secondary" onclick="percent()">%</button>
+        <button class="btn btn-operator" onclick="appendOp('/')">÷</button>
 
-      <button class="btn btn-wide" onclick="appendNum('0')">0</button>
-      <button class="btn" onclick="appendDot()">.</button>
-      <button class="btn btn-equals" onclick="calculate()">=</button>
+        <button class="btn" onclick="appendNum('7')">7</button>
+        <button class="btn" onclick="appendNum('8')">8</button>
+        <button class="btn" onclick="appendNum('9')">9</button>
+        <button class="btn btn-operator" onclick="appendOp('*')">×</button>
+
+        <button class="btn" onclick="appendNum('4')">4</button>
+        <button class="btn" onclick="appendNum('5')">5</button>
+        <button class="btn" onclick="appendNum('6')">6</button>
+        <button class="btn btn-operator" onclick="appendOp('-')">−</button>
+
+        <button class="btn" onclick="appendNum('1')">1</button>
+        <button class="btn" onclick="appendNum('2')">2</button>
+        <button class="btn" onclick="appendNum('3')">3</button>
+        <button class="btn btn-operator" onclick="appendOp('+')">+</button>
+
+        <button class="btn btn-wide" onclick="appendNum('0')">0</button>
+        <button class="btn" onclick="appendDot()">.</button>
+        <button class="btn btn-equals" onclick="calculate()">=</button>
+      </div>
+
+      <!-- Scientific row -->
+      <div class="sci-row">
+        <button class="sci-btn" onclick="squareRoot()">√x</button>
+        <button class="sci-btn" onclick="square()">x²</button>
+        <button class="sci-btn" onclick="reciprocal()">1/x</button>
+        <button class="sci-btn" onclick="appendOp('^')">xʸ</button>
+      </div>
     </div>
   </div>
   <script src="calculator.js"></script>

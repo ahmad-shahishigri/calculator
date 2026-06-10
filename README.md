@@ -4,14 +4,17 @@ A fully functional web-based calculator with a modern dark UI.
 
 ## Features
 
-- Basic arithmetic: addition, subtraction, multiplication, division
-- Percentage and sign toggle
-- Decimal point support
-- Chained calculations
-- Error handling (division by zero)
-- Keyboard support
-- Number formatting with commas
-- Responsive design
+- **Basic arithmetic** — addition, subtraction, multiplication, division
+- **Chained calculations** — chain multiple operations seamlessly
+- **Memory functions** — MC, MR, M+, M− (memory clear, recall, add, subtract)
+- **Scientific buttons** — √x, x², 1/x, xʸ (power)
+- **History panel** — last 50 calculations, click any result to recall it
+- **Percentage & sign toggle** — % and +/− buttons
+- **Decimal support** — with overflow protection
+- **Error handling** — division by zero, negative square root
+- **Keyboard support** — full keyboard navigation
+- **Number formatting** — comma-separated thousands
+- **Responsive design** — works on mobile
 
 ## Keyboard Shortcuts
 
@@ -19,15 +22,17 @@ A fully functional web-based calculator with a modern dark UI.
 |-----|--------|
 | 0–9 | Digits |
 | . | Decimal point |
-| + - * / | Operators |
+| + − * / | Operators |
+| ^ | Power (xʸ) |
 | Enter or = | Calculate |
 | Backspace | Delete last digit |
 | Escape | Clear all |
 | % | Percent |
+| H | Toggle history panel |
 
 ## Usage
 
-Open  in any modern browser — no build step required.
+Open `index.html` in any modern browser — no build step required.
 
 ## Tech
 
